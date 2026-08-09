@@ -1,28 +1,26 @@
-const input = document.getElementById("messageInput");
+const messageInput = document.getElementById("messageInput");
 const sendButton = document.getElementById("sendButton");
 const messages = document.getElementById("messages");
 
 function sendMessage() {
-    const text = input.value.trim();
+  const text = messageInput.value.trim();
 
-    if (text === "") return;
+  if (!text) return;
 
-    const message = document.createElement("div");
-    message.className = "message sent";
-    message.textContent = text;
+  const message = document.createElement("div");
+  message.className = "message";
+  message.textContent = text;
 
-    messages.appendChild(message);
+  messages.appendChild(message);
 
-    input.value = "";
-    input.focus();
-
-    messages.scrollTop = messages.scrollHeight;
+  messageInput.value = "";
+  messageInput.focus();
 }
 
 sendButton.addEventListener("click", sendMessage);
 
-input.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-        sendMessage();
-    }
+messageInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    sendMessage();
+  }
 });
