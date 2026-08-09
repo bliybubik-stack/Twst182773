@@ -11,10 +11,12 @@
   <div class="messenger">
     <div id="messages"></div>
 
-    <input id="messageInput" type="text" placeholder="Type a message...">
+    <!-- Added autocomplete="off" to prevent autofill suggestions -->
+    <input id="messageInput" type="text" placeholder="Type a message..." autocomplete="off">
     <button id="sendButton">Send</button>
 
-    <input id="passwordInput" type="password" placeholder="Password">
+    <!-- Added autocomplete="on" to enable password autofill suggestions -->
+    <input id="passwordInput" type="password" placeholder="Password" autocomplete="on">
 
   </div>
 
